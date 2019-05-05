@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+app.use(express.static('public'));
 app.use('/', indexRouter);
 
 app.listen(port, () => {
