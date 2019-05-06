@@ -1,29 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     background-color: white;
+    width: 100%;
 }
 
 /* Navbar and nav links */
 nav {
-    border: 0;
-    margin-top: 0;
     background-color:  #ff671b;
-    padding: 10px;
-    margin: 0;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 nav h1 {
+    display:inline;
     text-align: center;
-    padding: 0 20px;
+    padding: 20px 0;
 }
 
 nav ul {
-    display: flex;
+    display: flex;   
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    flex-wrap: wrap;
     list-style-type: none;
+
 }
 
 nav ul li a{
     text-decoration-line: none;
-    padding:  10px 30px;
+    margin: 5px;
+
     color: black;
     text-transform: uppercase;
     text-align: center;
@@ -42,11 +53,6 @@ nav ul li a:hover {
 /* 
     Main content
 */
-section{
-    display: block;
-    margin: 20px 0px;
-    background-color: #
-}
 
 section img {
     object-fit: cover;
@@ -68,4 +74,9 @@ section img {
 
 .footer ul li a {
     text-decoration-style: none;
+}
+
+.footer table {
+    margin: 50px 0;
+    display: inline;
 }
