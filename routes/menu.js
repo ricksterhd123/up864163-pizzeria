@@ -7,8 +7,6 @@ router.get('/', function(req, res, next) {
     fs.readFile('./models/menu.json',
     function(err, jsonData){
         let data = JSON.parse(jsonData);
-        console.log(data.pizzas);
-        console.log(data.pizzas[0].name);
         res.render('menu', {menu: data});
     });
 });

@@ -58,6 +58,13 @@ section img {
     object-fit: cover;
 }
 
+.pizza {
+    display:block;
+    padding: 10px;
+    margin: 5px 25%;
+    background-color: #ff9400;
+    list-style-type: none;
+}
 /*
     Footer stuff
 */
@@ -66,6 +73,7 @@ section img {
     flex-flow: row wrap;
     background-color:  #ff671b;
     padding: 10px;
+    margin-top: 20px;
 }
 
 .footer ul {
