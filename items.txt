@@ -1,5 +1,3 @@
-Pizzas
-===
 Margherita	    	    ; Tomatoes and mozzerella ; 12.00
 Pepperoni 		        ; Pepperoni and cheese    ; 12.00
 Hawaiian  		        ; Ham and pineapple; 12.00
@@ -15,30 +13,7 @@ Farmhouse 		        ; Ham and mushroom; 15.00
 Chicken land special 	; Pepperoni, spicy beef, chicken, onion, sweetcorn and peppers; 15.00
 Hot and spicy 		    ; Spicy beef, onion and jalapenos; 15.00
 Mexican hot		        ; Spicy mexican chicken, mushrooms, sweetcorn and jalapenos; 15.00
-
-Sides
-===
 Garlic bread		    ; Fresh garlic and our finest bread; 2.50
 Garlic bread with cheese; Fresh garlic and our finest bread with mozzerella cheese melted on top; 2.50
-
-Drinks
-===
 Can drink 500ml; ; 1.00
 Bottled drink 1.5L; ; 1.50
-
-Extra toppings
-===
-Spicy beef; ;0.70
-Chicken; ;0.70
-Pepperoni; ;0.70
-Mushrooms; ;0.70
-Onions; ;0.70
-Sausage; ;0.70
-Bacon; ;0.70
-Ham; ;0.70
-Extra cheese; ;0.70
-Black olives; ;0.70
-Green peppers; ;0.70
-Pineapple; ;0.70
-Spinach; ;0.70
-Jalapenos; ;0.70

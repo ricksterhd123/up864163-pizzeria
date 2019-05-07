@@ -1,0 +1,27 @@
+{ 
+        "pizzas" : [
+            {"id": 1, "name": "Margherita", "description": "Tomatoes and mozzerella", "price": 12.00},
+            {"id": 2, "name": "Pepperoni", "description": "Pepperoni and cheese", "price": 12.00},
+            {"id": 3, "name": "Hawaiian", "description": "Ham and pineapple", "price": 12.00},
+            {"id": 4, "name": "Vegetarian", "description": "Mushroom, onion peppers, sweetcorn and tomato", "price": 13.00},
+            {"id": 5, "name": "Full house", "description": "Spicy beef, jalapenos, onion, peppers and tomato", "price": 13.50},
+            {"id": 6, "name": "BBQ Chicken", "description": "Chicken, mushroom and onion", "price": 13.50},
+            {"id": 7, "name": "Meat feast", "description": "Beef, pepperoni, ham and bacon", "price": 13.50},
+            {"id": 8, "name": "Chicken feast", "description": "Chicken, mushroom, onion and sweetcorn", "price": 13.50},
+            {"id": 9, "name": "Sea food",   "description": "Tuna, prawn and anchovies", "price": 15.00},
+            {"id": 10, "name": "Four seasons", "description": "Ham, chicken, pepperoni, onion, tomato and mushrooms", "price": 15.00},
+            {"id": 11, "name": "Tex mex BBQ", "description": "BBQ base, chicken, ham and peppers", "price": 15.00},
+            {"id": 12, "name": "Farmhouse", "description": "Ham and mushrooms", "price": 15.00},
+            {"id": 13, "name": "Chicken special", "description": "Pepperoni, spicy beef, chicken, onion, sweetcorn and peppers", "price": 15.00},
+            {"id": 14, "name": "Hot and spicy", "description": "Spicy beef, onion and jalapenos", "price": 15.00},
+            {"id": 15, "name": "Mexican hot", "description": "Spicy mexican chicken", "price": 15.00}
+        ],
+
+        "sides" : [
+            {}
+        ],
+
+        "drinks" : [
+            {}
+        ]
+}

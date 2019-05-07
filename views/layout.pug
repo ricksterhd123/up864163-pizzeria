@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title #{title}
+    link(href='/styles/style.css', rel='stylesheet')
+    link(href='https://use.fontawesome.com/releases/v5.7.0/css/all.css', rel='stylesheet', integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ', crossorigin='anonymous')
+  body
+    block nav
+    block content
+    block footer
+        .footer
+            ul
+                li
+                    a(href='#') Privacy policy
+                li
+                    a(href='#') Allergy Information
+                li
+                    a(href='#') Terms and service
+                li
+                    a(href='https://www.paypal.com/uk/webapps/mpp/paypal-popup', title='How PayPal Works', onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=10%, height=10%'); return false;")
+                    img(src='https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png', border='0', alt='PayPal Acceptance Mark')

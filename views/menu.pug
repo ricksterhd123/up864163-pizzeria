@@ -1,0 +1,26 @@
+extends layout
+
+block nav
+    nav
+        h1 #{title}
+        ul
+            li
+                a(href='/') Home
+            li
+                a(href='#' class="active") Menu
+            li
+                a(href='/reviews') Reviews
+            li
+                a(href='/auth') Login
+            li
+                a(href="/order")
+                    i(class='fas fa-shopping-cart') £0.00
+block content
+    ul
+    - for (var x = 0; x <= menu.pizzas.length -1; x++)
+        li(class="pizza")
+            p= menu.pizzas[x].name
+            p= menu.pizzas[x].description
+            p= "£" + menu.pizzas[x].price
+
+
