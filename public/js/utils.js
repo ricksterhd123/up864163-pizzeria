@@ -1,19 +1,19 @@
 
 /**
  * Async AJAX
- * @param {string} url - The url to GET request
- * @param {function} callback - function which is called once loaded => callback(httpStatus, data)
+ * @param {string} requestType - The HTTP request type to send to URL.
+ * @param {string} url - The URL to send request to.
+ * @param {string} formData - The x-www-form-urlencoded data to send.
+ * @param {function} callback - Function which is called once loaded
  */
-function AJAXGet(url, callback){
+function doAJAX(requestType, url, formData, callback){
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
-        if (this.readyState == 4 && this.status == 200){
-            callback(this.status, this.responseText);
-        }else{
-            callback(this.status, false);
-        }
+        if (this.readyState != 4) return;
+        callback(this.status, this.responseText);
     }
 
-    xhttp.open("GET", url, true);
-    xhttp.send();
+    xhttp.open(requestType, url, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send(formData);
 }

@@ -7,10 +7,12 @@
 body {
     background-color: white;
     width: 100%;
+    font-family: verdana;
 }
 
 /* Navbar and nav links */
 nav {
+    display: block;
     background-color:  #ff671b;
     padding: 20px;
     margin-bottom: 20px;
@@ -24,11 +26,10 @@ nav h1 {
 
 nav ul {
     display: flex;   
-    display: -webkit-flex; /* Safari */
-    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: -webkit-flex; 
+    -webkit-flex-wrap: wrap; 
     flex-wrap: wrap;
     list-style-type: none;
-
 }
 
 nav ul li a{
@@ -48,6 +49,25 @@ nav ul li a:hover {
     background-color: #b83d00;
 }
 
+#basketBtn{
+    display: flex;
+}
+
+
+button{
+    background-color: black;
+    color: #6cff00;
+    height: 30%;
+    width: 30%;
+    font-weight: bold;
+    border-style: none;
+    padding: 5px;
+    margin: 5px 0;
+}
+button:hover{
+    background-color: #6cff00;
+    color: black;
+}
 
 
 /* 

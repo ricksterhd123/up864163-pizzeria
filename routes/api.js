@@ -33,11 +33,15 @@ router.post('/basket/add', function(req, res){
             
             console.log(menuItems);
             console.log("Selected item: " + selectedItem);
+
+            // If the basket exists add item
+            // otherwise, return a status 400 with a response.
             if (req.session.basket){
+                req.session.basket = new Basket(req.session.basket);
                 req.session.basket.add(selectedItem);
-                res.status(200).send(selectedItem);
+                res.status(200).send(req.session.basket);
             } else {
-                res.status(400).send("Server says: stop it ;(");
+                res.status(400).send();
             }
         });
     } else {

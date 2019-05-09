@@ -5,9 +5,14 @@
  * NOTE: All items must be objects with one 'price' field of type integer.
  */
 class Basket{
-    constructor(){
-        this.items = [];    // A list of menu item objects.
-        this.total = 0.00;     // Total cost of all menu items.
+    constructor(basketObj){
+        if (basketObj){
+            this.items = basketObj.items;
+            this.total = basketObj.total;
+        } else {
+            this.items = [];
+            this.total = 0.00;
+        }
     }
 
     /**
@@ -39,4 +44,7 @@ class Basket{
     }
 }
 
+let b = new Basket();
+b.add({"price": 12.00});
+console.log(b.add);
 module.exports = Basket;
