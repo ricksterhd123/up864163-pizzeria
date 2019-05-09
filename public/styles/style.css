@@ -65,10 +65,27 @@ section img {
     background-color: #ff9400;
     list-style-type: none;
 }
+
+.drink {
+    display:block;
+    padding: 10px;
+    margin: 5px 25%;
+    background-color: #00ebff;
+    list-style-type: none;
+}
+
+.side {
+    display:block;
+    padding: 10px;
+    margin: 5px 25%;
+    background-color: #ff006c;
+    list-style-type: none;
+}
+
 /*
     Footer stuff
 */
-.footer {
+footer {
     display: flex;
     flex-flow: row wrap;
     background-color:  #ff671b;
@@ -76,15 +93,15 @@ section img {
     margin-top: 20px;
 }
 
-.footer ul {
+footer ul {
     list-style-type: none;
 }
 
-.footer ul li a {
+footer ul li a {
     text-decoration-style: none;
 }
 
-.footer table {
+footer table {
     margin: 50px 0;
     display: inline;
 }

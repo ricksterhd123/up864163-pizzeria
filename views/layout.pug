@@ -8,7 +8,7 @@ html
     block nav
     block content
     block footer
-        .footer
+        footer
             ul
                 li
                     a(href='#') Privacy policy
@@ -19,3 +19,5 @@ html
                 li
                     a(href='https://www.paypal.com/uk/webapps/mpp/paypal-popup', title='How PayPal Works', onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=10%, height=10%'); return false;")
                     img(src='https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png', border='0', alt='PayPal Acceptance Mark')
+    block scripts
+        script(src='/js/utils.js')

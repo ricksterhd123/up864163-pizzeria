@@ -11,10 +11,9 @@ block nav
             li
                 a(href='/reviews') Reviews
             li
-                a(href='/auth') Login
-            li
                 a(href="/order")
-                i(class='fas fa-shopping-cart') £0.00
+                    i(class='fas fa-shopping-cart')
+                    = (basket.total % 1 == 0) ? "£" + basket.total + ".00" : "£" + basket.total
 
 block content
     section

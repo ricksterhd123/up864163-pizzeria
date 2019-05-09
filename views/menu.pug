@@ -11,17 +11,16 @@ block nav
             li
                 a(href='/reviews') Reviews
             li
-                a(href='/auth') Login
-            li
                 a(href="/order")
-                    i(class='fas fa-shopping-cart') £0.00
+                    i(class='fas fa-shopping-cart') 
+                    = (basket.total % 1 == 0) ? "£" + basket.total + ".00" : "£" + basket.total
 block content
     ul
-    - for (var x = 0; x <= menu.pizzas.length -1; x++)
-        li(class="pizza")
-            p= menu.pizzas[x].name
-            p= menu.pizzas[x].description
-            p= "£" + menu.pizzas[x].price
-            button Add to basket
-
-
+    - for (let x = 0; x <= menu.length -1; x++)
+        li(class=menu[x].type)
+            p= menu[x].name
+            p= menu[x].description
+            p= "£" + menu[x].price
+            button(onclick="addToBasket("+ x +")") Add to basket
+block append scripts
+    script(src='/js/menu.js')
