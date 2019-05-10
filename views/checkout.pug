@@ -7,7 +7,7 @@ block nav
             li
                 a(href='/') Home
             li
-                a(href='#' class="active") Menu
+                a(href='/menu' class="active") Menu
             li
                 a(href='/orders') View orders
             li
@@ -18,13 +18,18 @@ block nav
                         p(id="basketTotal")= "£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
                         p(id="basketNoItems")= "Items: "+basket.items.length
 block content
-    ul
-        - for (let x = 0; x <= menu.length -1; x++)
-            li(class=menu[x].type)
-                p= menu[x].name
-                p= menu[x].description
-                p= "£" + menu[x].price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
-                button(onclick="addToBasket("+ x +")") Add to basket
-
+    h2 Please enter your contact details 
+    h3 Collection only
+    form(action='/api/order' method='post')
+        p First name:
+        input(id="firstName", type='text', name='firstname', placeholder='Mickey')
+        p Last name:
+        input(id="lastName", type='text', name='lastname', placeholder='Mouse')
+        p Phone number:
+        input(id="phoneNumber", type='number', name='Phone number')
+        br
+    p= "Total (including VAT): £"+basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+    button(onclick="backToBasket()") Back
+    button(onclick="doOrder()") Place order
 block append scripts
-    script(src='/js/menu.js')
+    script(src="/js/checkout.js")

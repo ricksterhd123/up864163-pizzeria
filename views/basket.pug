@@ -9,7 +9,7 @@ block nav
             li
                 a(href='/menu' class="active") Menu
             li
-                a(href='/reviews') Reviews
+                a(href='/orders') View orders
             li
                 div(id="basketBtn")
                     a(href="#")
@@ -18,17 +18,19 @@ block nav
                         p(id="basketTotal")= "£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
                         p(id="basketNoItems")= "Items: "+basket.items.length
 block content
-    h1 Total: #{"£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
-    ul(id="basketList")
-    - for (let x = 0; x <= basket.items.length -1; x++)
-        li(class=basket.items[x].type, id=x)
-            p= basket.items[x].name
-            p= basket.items[x].description
-            p= "£" + basket.items[x].price
-            button(onclick="addItem(" + x + "," + basket.items[x].id +")") Add
-            button(onclick="removeItem(" + x + "," + basket.items[x].id +")") Remove
+    h1(id="basketTotalHeader") Total: #{"£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+    div(id="basketContainer")
+        ul(id="basketList")
+            - for (let x = 0; x <= basket.items.length -1; x++)
+                li(class=basket.items[x].type)
+                    p= basket.items[x].name
+                    p= basket.items[x].description
+                    p= "£" + basket.items[x].price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+                    button(onclick="addItem(" + basket.items[x].id +")") Add
+                    button(onclick="removeItem(" + basket.items[x].id +")") Remove
+
     h2 Sorry for the inconvience, we only accept cash and do collection orders.
-    button(disabled=basket.total == 0, onclick="doCheckout()") Checkout now
+    button(id="checkoutBtn" disabled=basket.total == 0, onclick="doCheckout()") Checkout now
 block append scripts
     script(src='/js/menu.js')
     script(src="/js/basket.js")

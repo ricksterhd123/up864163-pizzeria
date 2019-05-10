@@ -14,16 +14,12 @@ function parseCurrency(currencySign, money){
 /**
  * Update navbar basket content.
  */
-function updateNavBasket(){
-    doAJAX("GET", "/api/basket", "", (httpStatusCode, basketJSON) => {
-        if (httpStatusCode == 200 && basketJSON){
-            let basketObj = JSON.parse(basketJSON);
-            let pBasketTotal = document.querySelector("#basketTotal");
-            pBasketTotal.innerHTML = parseCurrency("£", basketObj.total);
-            let pBasketNoItems = document.querySelector("#basketNoItems");
-            pBasketNoItems.innerHTML = "Items: " + basketObj.items.length;
-        }
-    });
+function updateNavBasket(basketJSON){
+    let basketObj = JSON.parse(basketJSON);
+    let pBasketTotal = document.querySelector("#basketTotal");
+    pBasketTotal.innerHTML = parseCurrency("£", basketObj.total);
+    let pBasketNoItems = document.querySelector("#basketNoItems");
+    pBasketNoItems.innerHTML = "Items: " + basketObj.items.length;
 }
 
 /**
@@ -33,9 +29,9 @@ function updateNavBasket(){
 function addToBasket(id){
     console.log("Item bought: " + id);
     doAJAX("POST", "/api/basket/add", "id="+id, 
-    (httpStatusCode) =>{
-        if (httpStatusCode == 200){
-            updateNavBasket();
+    (httpStatusCode, basketJSON) =>{
+        if (httpStatusCode == 200 && basketJSON){
+            updateNavBasket(basketJSON);
         }
     });
 }

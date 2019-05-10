@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    div(class="row")
+        div(id="progress", class="column")
+            - console.log(orders)
+            div(id="orders")
+                - for(let i = 0; i < orders.length; i++)
+                    div(class="order") 
+                        p= "Name: " + orders[i].name
+                        p= "Last name: " + orders[i].lastName
+                        p= "Phone number: " + orders[i].phoneNumber
+                        div(class="items")
+                            - for (let j = 0; j < orders[i].order.items.length; j++)
+                                p= orders[i].order.items[j].name
+        div(id="finished", class="column")
+block append scripts
+    script(src="/js/orders.js")

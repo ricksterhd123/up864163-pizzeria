@@ -102,6 +102,28 @@ section img {
     list-style-type: none;
 }
 
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    height: 100%;
+}
+
+/* Order page */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#progress{
+    background-color: orangered;
+}
+
+.order {
+    background-color: orange;
+    margin: 5px;
+}
 /*
     Footer stuff
 */
