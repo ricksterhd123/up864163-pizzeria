@@ -10,15 +10,13 @@ function addItem(liID, itemID){
     (httpStatusCode) =>{
         if (httpStatusCode == 200){
             updateNavBasket();
-            
-            let ulBasketList = document.querySelector("#basketList");
+            let ulBasketList = document.qSuerySelector("#basketList");
             let liClickedBasketItem = doucment.querySelector("#"+liID);
             let liBasketItem = document.createElement("li");
             let pBasketName = document.createElement("p");
             let pBasketDescription = document.createElement("p");
             let btnAddItem = document.createElement("button");
             let btnRemoveItem = document.createElement("button");
-            
         }
     });
 }

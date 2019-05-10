@@ -17,7 +17,6 @@ block nav
                         // taken from https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-dollars-currency-string-in-javascript
                         p(id="basketTotal")= "£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
                         p(id="basketNoItems")= "Items: "+basket.items.length
-
 block content
     h1 Total: #{"£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
     ul(id="basketList")
@@ -30,7 +29,6 @@ block content
             button(onclick="removeItem(" + x + "," + basket.items[x].id +")") Remove
     h2 Sorry for the inconvience, we only accept cash and do collection orders.
     button(disabled=basket.total == 0, onclick="doCheckout()") Checkout now
-
 block append scripts
     script(src='/js/menu.js')
     script(src="/js/basket.js")
