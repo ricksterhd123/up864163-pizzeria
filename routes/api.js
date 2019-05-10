@@ -30,22 +30,28 @@ router.post('/basket/add', function(req, res){
             if (err){ throw err; }
             let menuItems = JSON.parse(jsonData);
             let selectedItem = menuItems[req.body.id]
-            
-            console.log(menuItems);
-            console.log("Selected item: " + selectedItem);
-
             // If the basket exists add item
-            // otherwise, return a status 400 with a response.
+            // otherwise, return a status 400 response.
             if (req.session.basket){
                 req.session.basket = new Basket(req.session.basket);
                 req.session.basket.add(selectedItem);
                 res.status(200).send(req.session.basket);
             } else {
-                res.status(400).send();
+                res.status(400).send("Bad request");
             }
         });
     } else {
         res.status(400).send("Invalid item id");
+    }
+});
+
+router.delete("/basket/delete", function(req, res){
+    if (res.body.id && req.session.basket){
+        
+        req.session.basket = new Basket(req.session.basket);
+        req.session.basket.delete()
+    }else{
+        res.status(400).send("Bad request");
     }
 });
 
@@ -54,7 +60,7 @@ router.get('/basket', function(req, res){
     if (req.session.basket){
         res.status(200).send(req.session.basket);
     }else{
-        res.status(400).send();
+        res.status(400).send("Bad request");
     }
 });
 module.exports = router;

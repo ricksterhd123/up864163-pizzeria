@@ -12,10 +12,10 @@ block nav
                 a(href='/reviews') Reviews
             li
                 div(id="basketBtn")
-                    a(href="/order")
+                    a(href="/basket")
                         i(class='fas fa-shopping-cart')
                         // taken from https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-dollars-currency-string-in-javascript
-                        p(id="basketTotal")= "£" + (basket.total).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+                        p(id="basketTotal")= "£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
                         p(id="basketNoItems")= "Items: "+basket.items.length
 block content
     ul
@@ -25,5 +25,6 @@ block content
             p= menu[x].description
             p= "£" + menu[x].price
             button(onclick="addToBasket("+ x +")") Add to basket
+
 block append scripts
     script(src='/js/menu.js')

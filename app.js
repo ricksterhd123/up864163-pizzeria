@@ -9,6 +9,7 @@ const port = 8080;
 const indexRoute = require('./routes/index');
 const menuRoute  = require('./routes/menu');
 const apiRoute   = require('./routes/api');
+const basketRoute = require('./routes/basket');
 
 // use express-session for storing basket items per session.
 // maxAge 60seconds.
@@ -28,6 +29,7 @@ app.use(bodyParser());
 app.use('/', indexRoute);
 app.use('/menu', menuRoute);
 app.use('/api', apiRoute);
+app.use('/basket', basketRoute);
 
 // Listen to port 8080
 app.listen(port, () => {

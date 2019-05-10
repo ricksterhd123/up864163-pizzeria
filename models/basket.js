@@ -24,15 +24,15 @@ class Basket{
         this.total += item.price;
     }
 
-    /**
-     * Removes all instances of a menu object from the basket and subtracts the price.
-     * @param {object} item - A menu object to remove from the basket. 
-     */
-    deleteAll(item){
-        let count = this.items.filter( (obj) => {return JSON.stringify(obj) == JSON.stringify(item);} ).length;
-        this.items = this.items.filter( (obj) => {return JSON.stringify(obj) != JSON.stringify(item);} );
-        this.total -= item.price * count;
-    }
+    // /**
+    //  * Removes all instances of a menu object from the basket and subtracts the price.
+    //  * @param {object} item - A menu object to remove from the basket. 
+    //  */
+    // deleteAll(item){
+    //     let count = this.items.filter( (obj) => {return JSON.stringify(obj) == JSON.stringify(item);} ).length;
+    //     this.items = this.items.filter( (obj) => {return JSON.stringify(obj) != JSON.stringify(item);} );
+    //     this.total -= item.price * count;
+    // }
 
     delete(item){
         let indexOfItem = this.items.find((obj) => {return JSON.stringify(obj) == JSON.stringify(item)});

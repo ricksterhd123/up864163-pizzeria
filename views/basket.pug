@@ -1,0 +1,36 @@
+extends layout
+
+block nav
+    nav
+        h1 #{title}
+        ul
+            li
+                a(href='/') Home
+            li
+                a(href='/menu' class="active") Menu
+            li
+                a(href='/reviews') Reviews
+            li
+                div(id="basketBtn")
+                    a(href="#")
+                        i(class='fas fa-shopping-cart')
+                        // taken from https://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-dollars-currency-string-in-javascript
+                        p(id="basketTotal")= "£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+                        p(id="basketNoItems")= "Items: "+basket.items.length
+
+block content
+    h1 Total: #{"£" + basket.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+    ul(id="basketList")
+    - for (let x = 0; x <= basket.items.length -1; x++)
+        li(class=basket.items[x].type, id=x)
+            p= basket.items[x].name
+            p= basket.items[x].description
+            p= "£" + basket.items[x].price
+            button(onclick="addItem(" + x + "," + basket.items[x].id +")") Add
+            button(onclick="removeItem(" + x + "," + basket.items[x].id +")") Remove
+    h2 Sorry for the inconvience, we only accept cash and do collection orders.
+    button(disabled=basket.total == 0, onclick="doCheckout()") Checkout now
+
+block append scripts
+    script(src='/js/menu.js')
+    script(src="/js/basket.js")
